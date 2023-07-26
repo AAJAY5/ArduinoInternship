@@ -1,10 +1,271 @@
----
+<!DOCTYPE html><html><head>
+      <title>ArduinoUnoInternship</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Mikrotroniks\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
 
 
----
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
 
-<h1 id="introduction-to-embedded-system">Introduction to Embedded System</h1>
-<h2 id="system-vs-embedded-system">System vs Embedded System</h2>
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p></p>
+<h1 class="mume-header" id="introduction-to-embedded-system">Introduction to Embedded System</h1>
+
+<hr>
+<h2 class="mume-header" id="system-vs-embedded-system">System vs Embedded System</h2>
 
 <table>
 <thead>
@@ -31,7 +292,8 @@
 <td>Music Player</td>
 </tr>
 </tbody>
-</table><h2 id="microprocessor-vs-microcontroller">Microprocessor vs Microcontroller</h2>
+</table>
+<h2 class="mume-header" id="microprocessor-vs-microcontroller">Microprocessor vs Microcontroller</h2>
 
 <table>
 <thead>
@@ -50,10 +312,13 @@
 <td><img src="https://www.javatpoint.com/embeddedsystem/images/es-8051-microcontroller2.png" alt="img"></td>
 </tr>
 </tbody>
-</table><h2 id="basic-embedded-system-block-diag.">Basic Embedded System Block Diag.</h2>
+</table>
+<h2 class="mume-header" id="basic-embedded-system-block-diag">Basic Embedded System Block Diag</h2>
+
 <p><img src="https://imgur.com/OJEkL5N.png" alt="img"></p>
-<h2 id="arduino-uno-overview">Arduino UNO Overview</h2>
-<h3 id="specs">Specs</h3>
+<h2 class="mume-header" id="arduino-uno-overview">Arduino UNO Overview</h2>
+
+<h3 class="mume-header" id="specs">Specs</h3>
 
 <table>
 <thead>
@@ -116,32 +381,38 @@
 <td>1KB</td>
 </tr>
 </tbody>
-</table><h3 id="arduino-uno-pinout">Arduino Uno Pinout</h3>
+</table>
+<h3 class="mume-header" id="arduino-uno-pinout">Arduino Uno Pinout</h3>
+
 <p><img src="https://www.electronicshub.org/wp-content/uploads/2021/01/High-Res-Arduino-UNO-Pinout.jpg" alt="img"></p>
-<h3 id="arduino-nano">Arduino Nano</h3>
+<h3 class="mume-header" id="arduino-nano">Arduino Nano</h3>
+
 <p><img src="https://www.electronicshub.org/wp-content/uploads/2021/01/Arduino-Nano-Pinout.jpg" alt="img"></p>
-<h2 id="programming-structure">Programming Structure</h2>
-<h3 id="sketch">Sketch</h3>
-<h4 id="setup">setup()</h4>
+<h2 class="mume-header" id="programming-structure">Programming Structure</h2>
+
+<h3 class="mume-header" id="sketch">Sketch</h3>
+
+<h4 class="mume-header" id="setup">setup()</h4>
+
 <ul>
 <li>The <code>setup()</code> function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The <code>setup()</code> function will only run once, after each powerup or reset of the Arduino board.</li>
 </ul>
-<h4 id="loop">loop()</h4>
+<h4 class="mume-header" id="loop">loop()</h4>
+
 <ul>
 <li>After creating a <code>setup()</code> function, which initializes and sets the initial values, the <code>loop()</code> function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond.</li>
 </ul>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token keyword">int</span> buttonPin <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token keyword keyword-int">int</span> buttonPin <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
 
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">pinMode</span><span class="token punctuation">(</span>buttonPin<span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<h3 id="control-structure">Control Structure</h3>
+</pre><h3 class="mume-header" id="control-structure">Control Structure</h3>
 
 <table>
 <thead>
@@ -163,8 +434,8 @@
 <td>-</td>
 </tr>
 <tr>
-<td>do…while</td>
-<td>The <code>do…​while</code> loop works in the same manner as the <code>while</code> loop, with the exception that the condition is tested at the end of the loop, so the do loop will always run at least once</td>
+<td>do...while</td>
+<td>The <code>do&#x2026;&#x200B;while</code> loop works in the same manner as the <code>while</code> loop, with the exception that the condition is tested at the end of the loop, so the do loop will always run at least once</td>
 <td><pre>do{<br>	/* block of code */<br>}while(condition)</pre></td>
 </tr>
 <tr>
@@ -179,17 +450,17 @@
 </tr>
 <tr>
 <td>if</td>
-<td>The <code>if</code> statement checks for a condition and executes the following statement or set of statements if the condition is ‘true’</td>
+<td>The <code>if</code> statement checks for a condition and executes the following statement or set of statements if the condition is &apos;true&apos;</td>
 <td><pre>if(condition){<br>	/* execute if true */<br>} </pre></td>
 </tr>
 <tr>
-<td>if…else</td>
-<td>The <code>if…​else</code> allows greater control over the flow of code than the basic <code>if</code> statement, by allowing multiple tests to be grouped. An <code>else</code> clause (if at all exists) will be executed if the condition in the <code>if</code> statement results in <code>false</code>. The <code>else</code> can proceed another <code>if</code> test, so that multiple, mutually exclusive tests can be run at the same time</td>
+<td>if...else</td>
+<td>The <code>if&#x2026;&#x200B;else</code> allows greater control over the flow of code than the basic <code>if</code> statement, by allowing multiple tests to be grouped. An <code>else</code> clause (if at all exists) will be executed if the condition in the <code>if</code> statement results in <code>false</code>. The <code>else</code> can proceed another <code>if</code> test, so that multiple, mutually exclusive tests can be run at the same time</td>
 <td><pre>if(condition){<br>	// statements <br>}else if(condition){<br>	//statements <br>} else{<br>	//statements <br>}</pre></td>
 </tr>
 <tr>
-<td>switch…case</td>
-<td>Like  if statements, switch case  controls the flow of programs by allowing programmers to specify different code that should be executed in various conditions. In particular, a switch statement compares the value of a variable to the values specified in case statements. When a case statement is found whose value matches that of the variable, the code in that case statement is run.The  break  keyword exits the switch statement, and is typically used at the end of each case. Without a break statement, the switch statement will continue executing the following expressions (“falling-through”) until a break, or the end of the switch statement is reached</td>
+<td>switch...case</td>
+<td>Like  if statements, switch case  controls the flow of programs by allowing programmers to specify different code that should be executed in various conditions. In particular, a switch statement compares the value of a variable to the values specified in case statements. When a case statement is found whose value matches that of the variable, the code in that case statement is run.The  break  keyword exits the switch statement, and is typically used at the end of each case. Without a break statement, the switch statement will continue executing the following expressions (&quot;falling-through&quot;) until a break, or the end of the switch statement is reached</td>
 <td><pre>switch (var) {<br>	case label1:<br>		// statements<br>		break;<br>	case label2:<br>		// statements<br>		break;<br>	default:<br>		// statements<br>		break;<br>}</pre></td>
 </tr>
 <tr>
@@ -203,7 +474,8 @@
 <td><pre>int add(int a, int b){<br>	return a+b;<br>}</pre></td>
 </tr>
 </tbody>
-</table><h3 id="arithmatic-operators">Arithmatic Operators</h3>
+</table>
+<h3 class="mume-header" id="arithmatic-operators">Arithmatic Operators</h3>
 
 <table>
 <thead>
@@ -245,11 +517,12 @@
 <td>int a = 10</td>
 </tr>
 </tbody>
-</table><h3 id="comparison-operators">Comparison Operators</h3>
+</table>
+<h3 class="mume-header" id="comparison-operators">Comparison Operators</h3>
+
 <ul>
 <li>It return true/false.</li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -290,7 +563,8 @@
 <td>a &gt;= b</td>
 </tr>
 </tbody>
-</table><h3 id="boolean-operators">Boolean Operators</h3>
+</table>
+<h3 class="mume-header" id="boolean-operators">Boolean Operators</h3>
 
 <table>
 <thead>
@@ -317,7 +591,8 @@
 <td>a || b</td>
 </tr>
 </tbody>
-</table><h3 id="bitwise-operators">Bitwise Operators</h3>
+</table>
+<h3 class="mume-header" id="bitwise-operators">Bitwise Operators</h3>
 
 <table>
 <thead>
@@ -359,11 +634,12 @@
 <td>8(0b00001000)&gt;&gt;2 = 2(0b00000010)</td>
 </tr>
 </tbody>
-</table><h3 id="compound-operators">Compound Operators</h3>
+</table>
+<h3 class="mume-header" id="compound-operators">Compound Operators</h3>
+
 <ul>
 <li>shorthand notation</li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -420,24 +696,23 @@
 </tr>
 <tr>
 <td>decrement</td>
-<td>–</td>
-<td>x–</td>
+<td>--</td>
+<td>x--</td>
 </tr>
 </tbody>
-</table><h2 id="variables">Variables</h2>
-<h3 id="constants">Constants</h3>
-<ul>
-<li>
-<p>Use <code>const or #define</code> to use declare const variables.</p>
-<pre class=" language-arduino"><code class="prism  language-arduino">const <span class="token keyword">int</span> retry <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> MAX_RETRY_COUNT 3</span>
-</code></pre>
-</li>
-<li>
-<p>Some const used in Arduino is listed in below table.</p>
-</li>
-</ul>
+</table>
+<h2 class="mume-header" id="variables">Variables</h2>
 
+<h3 class="mume-header" id="constants">Constants</h3>
+
+<ul>
+<li>Use <code>const or #define</code> to use declare const variables.</li>
+</ul>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino">const <span class="token keyword keyword-int">int</span> retry <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX_RETRY_COUNT</span> <span class="token expression"><span class="token number">3</span></span></span>
+</pre><ul>
+<li>Some const used in Arduino is listed in below table.</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -471,7 +746,8 @@
 <td>13</td>
 </tr>
 </tbody>
-</table><h3 id="data-types">Data Types</h3>
+</table>
+<h3 class="mume-header" id="data-types">Data Types</h3>
 
 <table>
 <thead>
@@ -548,7 +824,8 @@
 <td>-2147483648 to 2147483647</td>
 </tr>
 </tbody>
-</table><h3 id="utilities">Utilities</h3>
+</table>
+<h3 class="mume-header" id="utilities">Utilities</h3>
 
 <table>
 <thead>
@@ -567,7 +844,8 @@
 <td>Store data in flash (program) memory instead of SRAM</td>
 </tr>
 </tbody>
-</table><h3 id="variable-scope--qualifiers">Variable Scope &amp; Qualifiers</h3>
+</table>
+<h3 class="mume-header" id="variable-scope--qualifiers">Variable Scope &amp; Qualifiers</h3>
 
 <table>
 <thead>
@@ -579,7 +857,7 @@
 <tbody>
 <tr>
 <td>const</td>
-<td>The <code>const</code> keyword stands for constant. It is a variable <em>qualifier</em> that modifies the behavior of the variable, making a variable “<em>read-only</em>”</td>
+<td>The <code>const</code> keyword stands for constant. It is a variable <em>qualifier</em> that modifies the behavior of the variable, making a variable &quot;<em>read-only</em>&quot;</td>
 </tr>
 <tr>
 <td>static</td>
@@ -590,26 +868,30 @@
 <td><code>volatile</code> is a keyword known as a variable <em>qualifier</em>, it is usually used before the datatype of a variable, to modify the way in which the compiler and subsequent program treat the variable</td>
 </tr>
 </tbody>
-</table><h2 id="gpio-general-purpose-input-or-output">GPIO (General Purpose Input or Output)</h2>
-<h3 id="push-button">Push Button</h3>
+</table>
+<h2 class="mume-header" id="gpio-general-purpose-input-or-output">GPIO (General Purpose Input or Output)</h2>
+
+<h3 class="mume-header" id="push-button">Push Button</h3>
+
 <p><img src="https://imgur.com/iTYlIkO.png" alt="push_button"></p>
 <ul>
 <li>As shown in above image the terminals which falls inside the oval are internally connected.</li>
 </ul>
-<h3 id="pull-down-configuration-with-push-button">Pull-down configuration with push button</h3>
+<h3 class="mume-header" id="pull-down-configuration-with-push-button">Pull-down configuration with push button</h3>
+
 <ul>
 <li>In such a configuration the input pin or the pin which we are monitoring remains <strong><code>LOW</code></strong>  when circuit is kept open (push button is not pressed) and  <strong><code>HIGH</code></strong> when circuit is closed (push button is pressed).</li>
 </ul>
 <p><img src="https://imgur.com/wLweJlj.png" alt="pull_down"></p>
-<h3 id="pull-up-configuration-with-push-button">Pull-up configuration with push button</h3>
+<h3 class="mume-header" id="pull-up-configuration-with-push-button">Pull-up configuration with push button</h3>
+
 <ul>
 <li>In such a configuration the input pin or the pin which we are monitoring remains <strong><code>HIGH</code></strong>  when circuit is kept open (push button is not pressed) and  <strong><code>LOW</code></strong> when circuit is closed (push button is pressed).</li>
 </ul>
-<p><img src="https://cdn.sparkfun.com/assets/6/f/b/c/7/511568b6ce395f1b40000000.jpg" alt=""></p>
+<p><img src="https://cdn.sparkfun.com/assets/6/f/b/c/7/511568b6ce395f1b40000000.jpg" alt="img"></p>
 <ul>
 <li>API</li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -639,15 +921,16 @@
 <td>void</td>
 </tr>
 </tbody>
-</table><ul>
+</table>
+<ul>
 <li>Example LED Blink</li>
 </ul>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
 	<span class="token comment">/* Will blink builtin led every one second*/</span>
 	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -655,41 +938,41 @@
 	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<ul>
+</pre><ul>
 <li>Example Read &amp; Write GPIO</li>
 </ul>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token macro property">#<span class="token directive keyword">define</span> PUSH_BTN	7		</span><span class="token comment">// pin on which push button is connected</span>
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">PUSH_BTN</span>	<span class="token expression"><span class="token number">7</span>		</span><span class="token comment">// pin on which push button is connected</span></span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>PUSH_BTN<span class="token punctuation">,</span><span class="token constant">INPUT_PULLUP</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Set pin as input because your are reading the state </span>
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-	<span class="token keyword">int</span> state <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>PUSH_BTN<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>state <span class="token operator">==</span><span class="token constant">LOW</span><span class="token punctuation">)</span> <span class="token comment">// Button pressed </span>
+	<span class="token keyword keyword-int">int</span> state <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>PUSH_BTN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>state <span class="token operator">==</span><span class="token constant">LOW</span><span class="token punctuation">)</span> <span class="token comment">// Button pressed </span>
 	<span class="token punctuation">{</span>
 		<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED on </span>
 	<span class="token punctuation">}</span>
-	<span class="token keyword">else</span><span class="token punctuation">{</span> 
+	<span class="token keyword keyword-else">else</span><span class="token punctuation">{</span> 
 		<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED off</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<h2 id="serial-vs.-parallel-communication">SERIAL VS. PARALLEL COMMUNICATION</h2>
+</pre><h2 class="mume-header" id="serial-vs-parallel-communication">SERIAL VS. PARALLEL COMMUNICATION</h2>
+
 <ul>
 <li>
-<p>The bits of data can be transmitted either in parallel or serial form. In parallel communication, the bits of data are sent all at the same time, each through a separate wire. The following diagram shows the parallel transmission of the letter “C” in binary (01000011)<br>
-<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Parallel-Transmission-of-One-Byte-3-768x489.png" alt=""></p>
+<p>The bits of data can be transmitted either in parallel or serial form. In parallel communication, the bits of data are sent all at the same time, each through a separate wire. The following diagram shows the parallel transmission of the letter &#x201C;C&#x201D; in binary (01000011)<br>
+<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Parallel-Transmission-of-One-Byte-3-768x489.png" alt="img"></p>
 </li>
 <li>
-<p>In serial communication, the bits are sent one by one through a single wire. The following diagram shows the serial transmission of the letter “C” in binary (01000011)<br>
-<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Serial-Transmission-of-the-Letter-C-768x235.png" alt=""></p>
+<p>In serial communication, the bits are sent one by one through a single wire. The following diagram shows the serial transmission of the letter &#x201C;C&#x201D; in binary (01000011)<br>
+<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Serial-Transmission-of-the-Letter-C-768x235.png" alt="img"></p>
 </li>
 </ul>
-<h2 id="serial-uart--universal-asynchronous-receiver-transmitter">Serial (UART- Universal asynchronous receiver transmitter)</h2>
+<h2 class="mume-header" id="serial-uart--universal-asynchronous-receiver-transmitter">Serial (UART- Universal asynchronous receiver transmitter)</h2>
+
 <ul>
 <li>
 <p>UARTs transmit data  <em>asynchronously</em>, which means there is no clock signal to synchronize the output of bits from the transmitting UART to the sampling of bits by the receiving UART. Instead of a clock signal, the transmitting UART adds start and stop bits to the data packet being transferred. These bits define the beginning and end of the data packet so the receiving UART knows when to start reading the bits.</p>
@@ -699,21 +982,22 @@
 </li>
 <li>
 <p>Basic connections<br>
-<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-UART-Basic-Connection-Diagram-300x147.png" alt=""></p>
+<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-UART-Basic-Connection-Diagram-300x147.png" alt="img"></p>
 </li>
 <li>
 <p>Info<br>
-<img src="https://www.circuitbasics.com/wp-content/uploads/2016/02/Basics-of-UART-Communication-Specifications-Table-768x243.png" alt=""></p>
+<img src="https://www.circuitbasics.com/wp-content/uploads/2016/02/Basics-of-UART-Communication-Specifications-Table-768x243.png" alt="img"></p>
 </li>
 </ul>
-<h3 id="uart-packet-format">UART Packet Format</h3>
+<h3 class="mume-header" id="uart-packet-format">UART Packet Format</h3>
+
 <ul>
 <li>
 <p>UART transmitted data is organized into <em>packets</em>. Each packet contains 1 start bit, 5 to 9 data bits (depending on the UART), an optional <em>parity</em> bit, and 1 or 2 stop bits<br>
-<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-UART-Packet-Frame-and-Bits-2.png" alt=""></p>
+<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-UART-Packet-Frame-and-Bits-2.png" alt="img"></p>
 </li>
 <li>
-<p><code>START BIT</code>: The UART data transmission line is normally held at a high voltage level when it’s not transmitting data. To start the transfer of data, the transmitting UART pulls the transmission line from high to low for one clock cycle</p>
+<p><code>START BIT</code>: The UART data transmission line is normally held at a high voltage level when it&#x2019;s not transmitting data. To start the transfer of data, the transmitting UART pulls the transmission line from high to low for one clock cycle</p>
 </li>
 <li>
 <p><code>STOP BITS</code>: To signal the end of the data packet, the sending UART drives the data transmission line from a low voltage to a high voltage for at least two bit durations</p>
@@ -726,12 +1010,11 @@
 </li>
 <li>
 <p>API</p>
-<ul>
-<li><a href="https://www.arduino.cc/reference/en/language/functions/communication/serial/">See all API here</a></li>
-</ul>
+</li>
+<li>
+<p><a href="https://www.arduino.cc/reference/en/language/functions/communication/serial/">See all API here</a></p>
 </li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -755,7 +1038,8 @@
 <td>void</td>
 </tr>
 </tbody>
-</table><h3 id="bonus">Bonus</h3>
+</table>
+<h3 class="mume-header" id="bonus">Bonus</h3>
 
 <table>
 <thead>
@@ -774,7 +1058,8 @@
 <td>1 bit time (clock): 1.041ms</td>
 </tr>
 </tbody>
-</table><h2 id="adc--analog-to-digital-converter-">ADC ( Analog to Digital Converter )</h2>
+</table>
+<h2 class="mume-header" id="adc--analog-to-digital-converter-">ADC ( Analog to Digital Converter )</h2>
 
 <table>
 <thead>
@@ -808,16 +1093,16 @@
 <td>4.9mv/step</td>
 </tr>
 </tbody>
-</table><ul>
+</table>
+<ul>
 <li>
 <p>API</p>
-<pre class=" language-arduino"><code class="prism  language-arduino">	<span class="token comment">// Read adc</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino">	<span class="token comment">// Read adc</span>
 	<span class="token function">analogRead</span><span class="token punctuation">(</span>pin<span class="token punctuation">)</span>	
 	
 	<span class="token comment">// Configures the reference voltage used for analog input</span>
 	<span class="token function">analogReference</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span>
-</code></pre>
-</li>
+</pre></li>
 <li>
 <p>analogReference()</p>
 <ul>
@@ -842,27 +1127,26 @@
 </li>
 <li>
 <p>The code reads the voltage on analogPin and displays it.</p>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token keyword">int</span> analogPin <span class="token operator">=</span> A3<span class="token punctuation">;</span> <span class="token comment">// potentiometer wiper (middle terminal) connected to analog pin 3</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token keyword keyword-int">int</span> analogPin <span class="token operator">=</span> A3<span class="token punctuation">;</span> <span class="token comment">// potentiometer wiper (middle terminal) connected to analog pin 3</span>
                     <span class="token comment">// outside leads to ground and +5V</span>
-<span class="token keyword">int</span> val <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// variable to store the value read</span>
+<span class="token keyword keyword-int">int</span> val <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// variable to store the value read</span>
 
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">//  setup serial</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   val <span class="token operator">=</span> <span class="token function">analogRead</span><span class="token punctuation">(</span>analogPin<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// read the input pin</span>
   <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// debug value</span>
 <span class="token punctuation">}</span>
-</code></pre>
-</li>
+</pre></li>
 </ul>
-<h2 id="pwm--pulse-width-modulation-">PWM ( Pulse Width Modulation )</h2>
+<h2 class="mume-header" id="pwm--pulse-width-modulation-">PWM ( Pulse Width Modulation )</h2>
+
 <ul>
 <li>Writes an analog value to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to <code>analogWrite()</code>, the pin will generate a steady rectangular wave of the specified duty cycle until the next call to <code>analogWrite()</code> (or a call to <code>digitalRead()</code> or <code>digitalWrite()</code>) on the same pin</li>
 <li>You do not need to call <code>pinMode()</code> to set the pin as an output before calling <code>analogWrite()</code></li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -882,30 +1166,30 @@
 <td>0-100% (0 - 255)</td>
 </tr>
 </tbody>
-</table><ul>
+</table>
+<ul>
 <li>
 <p>API</p>
-<pre class=" language-arduino"><code class="prism  language-arduino">	<span class="token comment">// Write pwm duty value to pin</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino">	<span class="token comment">// Write pwm duty value to pin</span>
 	<span class="token function">analogWrite</span><span class="token punctuation">(</span>pin<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
-</code></pre>
-</li>
+</pre></li>
 <li>
 <p>Example</p>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token keyword">int</span> ledPin <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>      						<span class="token comment">// LED connected to digital pin 9</span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token keyword keyword-int">int</span> ledPin <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>      						<span class="token comment">// LED connected to digital pin 9</span>
 
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">pinMode</span><span class="token punctuation">(</span>ledPin<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token comment">// sets the pin as output</span>
   <span class="token function">analogWrite</span><span class="token punctuation">(</span>ledPin<span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token comment">// 50% duty</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   
 <span class="token punctuation">}</span>
-</code></pre>
-<p><img src="https://imgur.com/xF6i9HZ.png" alt="img"></p>
+</pre><p><img src="https://imgur.com/xF6i9HZ.png" alt="img"></p>
 </li>
 </ul>
-<h2 id="i2c-inter-integrated-controller">I2C (inter-integrated controller)</h2>
+<h2 class="mume-header" id="i2c-inter-integrated-controller">I2C (inter-integrated controller)</h2>
+
 <ul>
 <li>
 <p>I2C stands for <strong>Inter-Integrated controller.</strong> It is a bus interface connection protocol incorporated into devices for serial communication. It was originally designed by Philips Semiconductor in 1982. Recently, it is a widely used protocol for short-distance communication. It is also known as Two Wired Interface(TWI).</p>
@@ -914,10 +1198,10 @@
 <p>It uses only 2 bi-directional open-drain lines for data communication called SDA and SCL. Both these lines are pulled high.</p>
 </li>
 <li>
-<p><strong>Serial Data (SDA) –</strong> Transfer of data takes place through this pin.</p>
+<p><strong>Serial Data (SDA) &#x2013;</strong> Transfer of data takes place through this pin.</p>
 </li>
 <li>
-<p><strong>Serial Clock (SCL) –</strong> It carries the clock signal.</p>
+<p><strong>Serial Clock (SCL) &#x2013;</strong> It carries the clock signal.</p>
 </li>
 <li>
 <p>I2C message packet<br>
@@ -945,7 +1229,6 @@
 <p>API</p>
 </li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -967,94 +1250,95 @@
 <tr>
 <td>end()</td>
 <td>Disable the Wire library, reversing the effect of <code>Wire.begin()</code></td>
-<td>✔️</td>
-<td>✔️</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x2714;&#xFE0F;</td>
 <td>-</td>
 </tr>
 <tr>
 <td>beginTransmission()</td>
 <td>This function begins a transmission to the I2C peripheral device with the given address. Subsequently, queue bytes for transmission with the <code>write()</code> function and transmit them by calling <code>endTransmission()</code></td>
-<td>✔️</td>
-<td>❌</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x274C;</td>
 <td>-</td>
 </tr>
 <tr>
 <td>endTransmission(stop=true)</td>
 <td>This function ends a transmission to a peripheral device that was begun by <code>beginTransmission()</code> and transmits the bytes that were queued by <code>write()</code>. <em>stop</em>: true or false. True will send a stop message, releasing the bus after transmission. False will send a restart, keeping the connection active.</td>
-<td>✔️</td>
-<td>❌</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x274C;</td>
 <td><pre><br>0: success.<br>1: data too long to fit in transmit buffer.<br>2: received NACK on transmit of address.<br>3: received NACK on transmit of data.<br>4: other error.<br>5: timeout</pre></td>
 </tr>
 <tr>
 <td>write(val),write(string), write(data, len)</td>
 <td>This function writes data from a peripheral device in response to a request from a controller device, or queues bytes for transmission from a controller to peripheral device</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x2714;&#xFE0F;</td>
 <td>number of bytes written</td>
 </tr>
 <tr>
 <td>requestFrom(addr, bytes, stop=true)</td>
 <td>This function is used by the controller device to request bytes from a peripheral device. The bytes may then be retrieved with the <code>available()</code> and <code>read()</code> functions</td>
-<td>✔️</td>
-<td>❌</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x274C;</td>
 <td>the number of bytes returned from the peripheral device</td>
 </tr>
 <tr>
 <td>available()</td>
 <td>This function returns the number of bytes available for retrieval with <code>read()</code>. This function should be called on a controller device after a call to <code>requestFrom()</code> or on a peripheral inside the <code>onReceive()</code> handler. <code>available()</code> inherits from the Stream utility class</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x2714;&#xFE0F;</td>
 <td>number of bytes available to read</td>
 </tr>
 <tr>
 <td>read()</td>
 <td>This function reads a byte that was transmitted from a peripheral device to a controller device after a call to <code>requestFrom()</code> or was transmitted from a controller device to a peripheral device. <code>read()</code> inherits from the Stream utility class</td>
-<td>✔️</td>
-<td>✔️</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x2714;&#xFE0F;</td>
 <td>byte</td>
 </tr>
 <tr>
 <td>setClock(clockFrequencyHz)</td>
 <td>This function modifies the clock frequency for I2C communication. I2C peripheral devices have no minimum working clock frequency, however 100KHz is usually the baseline</td>
-<td>✔️</td>
-<td>❌</td>
+<td>&#x2714;&#xFE0F;</td>
+<td>&#x274C;</td>
 <td></td>
 </tr>
 <tr>
 <td>onReceive(handler)</td>
 <td>This function registers a function to be called when a peripheral device receives a transmission from a controller device</td>
-<td>❌</td>
-<td>✔️</td>
+<td>&#x274C;</td>
+<td>&#x2714;&#xFE0F;</td>
 <td>None</td>
 </tr>
 <tr>
 <td>onRequest(handler)</td>
 <td>This function registers a function to be called when a controller device requests data from a peripheral device</td>
-<td>❌</td>
-<td>✔️</td>
+<td>&#x274C;</td>
+<td>&#x2714;&#xFE0F;</td>
 <td>None</td>
 </tr>
 </tbody>
-</table><ul>
+</table>
+<ul>
 <li>
 <p>Wiring diagram<br>
 <img src="https://electrosome.com/wp-content/uploads/2018/02/I2C-Interface.png" alt="img"></p>
 </li>
 <li>
 <p>ArduinoUNO I2C Master</p>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Wire.h&gt;</span></span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;Wire.h&gt;</span></span>
  
-<span class="token macro property">#<span class="token directive keyword">define</span> LED0_PIN 13</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED0_PIN</span> <span class="token expression"><span class="token number">13</span></span></span>
  
-<span class="token keyword">int</span> AN_POT<span class="token punctuation">;</span>
-<span class="token keyword">byte</span> RxByte<span class="token punctuation">;</span>
+<span class="token keyword keyword-int">int</span> AN_POT<span class="token punctuation">;</span>
+<span class="token keyword keyword-byte">byte</span> RxByte<span class="token punctuation">;</span>
  
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Initialize I2C (Master Mode: address is optional)</span>
   <span class="token function">pinMode</span><span class="token punctuation">(</span>LED0_PIN<span class="token punctuation">,</span> <span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
  
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// I2C TX</span>
   AN_POT <span class="token operator">=</span> <span class="token function">analogRead</span><span class="token punctuation">(</span>A0<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">beginTransmission</span><span class="token punctuation">(</span><span class="token number">0x55</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Transmit to device with address 85 (0x55)</span>
@@ -1062,38 +1346,37 @@
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">endTransmission</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Stop transmitting</span>
   <span class="token comment">// I2C RX</span>
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">requestFrom</span><span class="token punctuation">(</span><span class="token number">0x55</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Request From Slave @ 0x55, Data Length = 1Byte</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">available</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// Read Received Datat From Slave Device</span>
+  <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">available</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// Read Received Datat From Slave Device</span>
     RxByte <span class="token operator">=</span> <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
   <span class="token function">digitalWrite</span><span class="token punctuation">(</span>LED0_PIN<span class="token punctuation">,</span> <span class="token punctuation">(</span>RxByte<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-</li>
+</pre></li>
 <li>
 <p>ArduinoUNO I2C Slave</p>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Wire.h&gt;</span></span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;Wire.h&gt;</span></span>
 
-<span class="token macro property">#<span class="token directive keyword">define</span> BTN0_PIN 4</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">BTN0_PIN</span> <span class="token expression"><span class="token number">4</span></span></span>
 
  
-<span class="token keyword">byte</span> RxByte<span class="token punctuation">;</span>
-<span class="token keyword">byte</span> TxByte <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-byte">byte</span> RxByte<span class="token punctuation">;</span>
+<span class="token keyword keyword-byte">byte</span> TxByte <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
  
-<span class="token keyword">void</span> <span class="token function">I2C_RxHandler</span><span class="token punctuation">(</span><span class="token keyword">int</span> numBytes<span class="token punctuation">)</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">I2C_RxHandler</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> numBytes<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">available</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// Read Any Received Data</span>
+  <span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">available</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// Read Any Received Data</span>
     RxByte <span class="token operator">=</span> <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>RxByte<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
  
-<span class="token keyword">void</span> <span class="token function">I2C_TxHandler</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">I2C_TxHandler</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>TxByte<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
  
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">115200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">pinMode</span><span class="token punctuation">(</span>BTN0_PIN<span class="token punctuation">,</span> <span class="token constant">INPUT_PULLUP</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">0x55</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Initialize I2C (Slave Mode: address=0x55 )</span>
@@ -1101,16 +1384,16 @@
   <span class="token builtin">Wire</span><span class="token punctuation">.</span><span class="token function">onRequest</span><span class="token punctuation">(</span>I2C_TxHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
  
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">byte</span> BtnsData <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-byte">byte</span> BtnsData <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
   BtnsData <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>BTN0_PIN<span class="token punctuation">)</span><span class="token punctuation">;</span>
   TxByte <span class="token operator">=</span> BtnsData<span class="token punctuation">;</span>
   <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-</li>
+</pre></li>
 </ul>
-<h2 id="spi--serial-peripheral-interface-">SPI ( Serial peripheral interface )</h2>
+<h2 class="mume-header" id="spi--serial-peripheral-interface-">SPI ( Serial peripheral interface )</h2>
+
 <ul>
 <li>
 <p>SPI is a common communication protocol used by many different devices. For example, SD card reader modules, RFID card reader modules, and 2.4 GHz wireless transmitter/receivers all use SPI to communicate with microcontrollers.</p>
@@ -1125,26 +1408,25 @@
 <p>SPI uses minimum 3(SS, SCLK, MOSI) to 4(SS, SCLK, MOSI, MISO)  wires to communicate with slave.</p>
 </li>
 <li>
-<p><strong>MOSI (Master Output/Slave Input)</strong> – Line for the master to send data to the slave.</p>
+<p><strong>MOSI (Master Output/Slave Input)</strong> &#x2013; Line for the master to send data to the slave.</p>
 </li>
 <li>
-<p><strong>MISO (Master Input/Slave Output)</strong> – Line for the slave to send data to the master.</p>
+<p><strong>MISO (Master Input/Slave Output)</strong> &#x2013; Line for the slave to send data to the master.</p>
 </li>
 <li>
-<p><strong>SCLK (Clock)</strong> – Line for the clock signal.</p>
+<p><strong>SCLK (Clock)</strong> &#x2013; Line for the clock signal.</p>
 </li>
 <li>
-<p><strong>SS/CS (Slave Select/Chip Select)</strong> – Line for the master to select which slave to send data to.</p>
+<p><strong>SS/CS (Slave Select/Chip Select)</strong> &#x2013; Line for the master to select which slave to send data to.</p>
 </li>
 <li>
 <p>Master with multiple slave wiring diagram.<br>
-<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Multiple-Slave-Configuration-Separate-Slave-Select-768x787.png" alt=""></p>
+<img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Multiple-Slave-Configuration-Separate-Slave-Select-768x787.png" alt></p>
 </li>
 <li>
 <p>SPI Modes</p>
 </li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -1185,28 +1467,28 @@
 <td>Rising</td>
 </tr>
 </tbody>
-</table><ul>
+</table>
+<ul>
 <li>SPI_MODE0 clock diagram</li>
 </ul>
-<p><img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_02.png" alt=""></p>
+<p><img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_02.png" alt></p>
 <ul>
 <li>
 <p>SPI_MODE1 clock diagram<br>
-<img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_03.png" alt=""></p>
+<img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_03.png" alt></p>
 </li>
 <li>
 <p>SPI_MODE2 clock diagram<br>
-<img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_05.png" alt=""></p>
+<img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_05.png" alt></p>
 </li>
 <li>
 <p>SPI_MODE3 clock diagram<br>
-<img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_04.png" alt=""></p>
+<img src="https://www.analog.com/-/media/images/analog-dialogue/en/volume-52/number-3/articles/introduction-to-spi-interface/205973_fig_04.png" alt></p>
 </li>
 <li>
 <p>API</p>
 </li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -1256,15 +1538,16 @@
 <td>The <code>SPISettings</code> object is used to configure the SPI port for your SPI device. All 3 parameters are combined to a single <code>SPISettings</code> object, which is given to <code>SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE0))</code></td>
 </tr>
 </tbody>
-</table><ul>
+</table>
+<ul>
 <li>
 <p>SPI Master example</p>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;SPI.h&gt;</span>                             </span><span class="token comment">//Library for SPI </span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;SPI.h&gt;</span>                             <span class="token comment">//Library for SPI </span></span>
 
-<span class="token macro property">#<span class="token directive keyword">define</span> LED 13</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> BTN 4</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED</span> <span class="token expression"><span class="token number">13</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">BTN</span> <span class="token expression"><span class="token number">4</span></span></span>
 
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">115200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// LED output</span>
@@ -1275,17 +1558,17 @@
 	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>SS<span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// Detach SPI Slave device</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>SS<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span>		<span class="token comment">// attach SPI device</span>
 
 	<span class="token comment">// Send BTN state of Master </span>
-	<span class="token keyword">byte</span> send <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>BTN<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">byte</span> recv <span class="token operator">=</span> <span class="token builtin">SPI</span><span class="token punctuation">.</span><span class="token function">transfer</span><span class="token punctuation">(</span>send<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword keyword-byte">byte</span> send <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>BTN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword keyword-byte">byte</span> recv <span class="token operator">=</span> <span class="token builtin">SPI</span><span class="token punctuation">.</span><span class="token function">transfer</span><span class="token punctuation">(</span>send<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 	<span class="token comment">// Show Slave BTN status</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>recv <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>recv <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 		<span class="token function">digitalWrite</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+	<span class="token punctuation">}</span><span class="token keyword keyword-else">else</span><span class="token punctuation">{</span>
 		<span class="token function">digitalWrite</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 
@@ -1293,17 +1576,16 @@
 	<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>       
 
-</code></pre>
-</li>
+</pre></li>
 <li>
 <p>SPI Slave example</p>
-<pre class=" language-arduino"><code class="prism  language-arduino"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;SPI.h&gt;</span>                             </span><span class="token comment">//Library for SPI </span>
+<pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;SPI.h&gt;</span>                             <span class="token comment">//Library for SPI </span></span>
 
-<span class="token macro property">#<span class="token directive keyword">define</span> LED 13</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> BTN 4</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED</span> <span class="token expression"><span class="token number">13</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">BTN</span> <span class="token expression"><span class="token number">4</span></span></span>
 
-volatile <span class="token keyword">byte</span> rxdata <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-volatile <span class="token keyword">bool</span> rxdone <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+volatile <span class="token keyword keyword-byte">byte</span> rxdata <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+volatile <span class="token keyword keyword-bool">bool</span> rxdone <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
 <span class="token function">ISR</span> <span class="token punctuation">(</span>SPI_STC_vect<span class="token punctuation">)</span>   <span class="token comment">//Inerrrput routine function</span>
 <span class="token punctuation">{</span>
@@ -1311,7 +1593,7 @@ volatile <span class="token keyword">bool</span> rxdone <span class="token opera
   rxdone <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token builtin">Serial</span><span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">115200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// LED output</span>
@@ -1322,15 +1604,15 @@ volatile <span class="token keyword">bool</span> rxdone <span class="token opera
   	<span class="token function">pinMode</span><span class="token punctuation">(</span>MOSI<span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// TODO: OUTPUT?</span>
   	<span class="token function">pinMode</span><span class="token punctuation">(</span>SCK<span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>MISO<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Sets MISO as OUTPUT (Have to Send data to Master IN </span>
-	SPCR <span class="token operator">|</span><span class="token operator">=</span> <span class="token function">_BV</span><span class="token punctuation">(</span>SPE<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// Turn on SPI in Slave Mode</span>
+	SPCR <span class="token operator">|=</span> <span class="token function">_BV</span><span class="token punctuation">(</span>SPE<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// Turn on SPI in Slave Mode</span>
 	<span class="token builtin">SPI</span><span class="token punctuation">.</span><span class="token function">attachInterrupt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// Interuupt ON is set for SPI commnucation</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token keyword">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>rxdone<span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>rxdata<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>rxdone<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>rxdata<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 			<span class="token function">digitalWrite</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span> <span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+		<span class="token punctuation">}</span><span class="token keyword keyword-else">else</span><span class="token punctuation">{</span>
 			<span class="token function">digitalWrite</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 		<span class="token punctuation">}</span>
 		rxdone <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
@@ -1341,11 +1623,24 @@ volatile <span class="token keyword">bool</span> rxdone <span class="token opera
 	<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>       
 
-</code></pre>
-</li>
+</pre></li>
 </ul>
-<h2 id="reference">Reference</h2>
+<h2 class="mume-header" id="reference">Reference</h2>
+
 <ul>
 <li><a href="https://www.arduino.cc/reference/en/">Arduino Reference</a></li>
 </ul>
 
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
