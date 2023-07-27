@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\Mikrotroniks\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
       
       
       
@@ -265,6 +265,65 @@ pre[data-line] .line-highlight[data-end]:after {
 <h1 class="mume-header" id="introduction-to-embedded-system">Introduction to Embedded System</h1>
 
 <hr>
+<ul>
+<li><a href="#introduction-to-embedded-system">Introduction to Embedded System</a>
+<ul>
+<li><a href="#system-vs-embedded-system">System vs Embedded System</a></li>
+<li><a href="#microprocessor-vs-microcontroller">Microprocessor vs Microcontroller</a></li>
+<li><a href="#basic-embedded-system-block-diag">Basic Embedded System Block Diag</a></li>
+<li><a href="#arduino-uno-or-nano-overview">Arduino UNO or Nano Overview</a>
+<ul>
+<li><a href="#specifications">Specifications</a></li>
+<li><a href="#arduino-uno-pinout">Arduino Uno Pinout</a></li>
+<li><a href="#arduino-nano">Arduino Nano</a></li>
+</ul>
+</li>
+<li><a href="#programming-structure">Programming Structure</a>
+<ul>
+<li><a href="#sketch">Sketch</a>
+<ul>
+<li><a href="#setup">setup()</a></li>
+<li><a href="#loop">loop()</a></li>
+</ul>
+</li>
+<li><a href="#control-structure">Control Structure</a></li>
+<li><a href="#arithmatic-operators">Arithmatic Operators</a></li>
+<li><a href="#comparison-operators">Comparison Operators</a></li>
+<li><a href="#boolean-operators">Boolean Operators</a></li>
+<li><a href="#bitwise-operators">Bitwise Operators</a></li>
+<li><a href="#compound-operators">Compound Operators</a></li>
+</ul>
+</li>
+<li><a href="#variables">Variables</a>
+<ul>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#utilities">Utilities</a></li>
+<li><a href="#variable-scope--qualifiers">Variable Scope &amp; Qualifiers</a></li>
+</ul>
+</li>
+<li><a href="#gpio-general-purpose-input-or-output">GPIO (General Purpose Input or Output)</a>
+<ul>
+<li><a href="#push-button">Push Button</a></li>
+<li><a href="#pull-down-configuration-with-push-button">Pull-down configuration with push button</a></li>
+<li><a href="#pull-up-configuration-with-push-button">Pull-up configuration with push button</a></li>
+</ul>
+</li>
+<li><a href="#serial-vs-parallel-communication">Serial vs Parallel Communication</a></li>
+<li><a href="#serial--uart--universal-asynchronous-receiver-transmitter-">Serial ( UART- Universal asynchronous receiver-transmitter )</a>
+<ul>
+<li><a href="#uart-packet-format">UART Packet Format</a></li>
+<li><a href="#bonus">Bonus</a></li>
+</ul>
+</li>
+<li><a href="#adc--analog-to-digital-converter-">ADC ( Analog to Digital Converter )</a></li>
+<li><a href="#pwm--pulse-width-modulation-">PWM ( Pulse Width Modulation )</a></li>
+<li><a href="#i2c-inter-integrated-controller">I2C (Inter-integrated controller)</a></li>
+<li><a href="#spi--serial-peripheral-interface-">SPI ( Serial peripheral interface )</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
 <h2 class="mume-header" id="system-vs-embedded-system">System vs Embedded System</h2>
 
 <table>
@@ -276,20 +335,20 @@ pre[data-line] .line-highlight[data-end]:after {
 </thead>
 <tbody>
 <tr>
-<td>A system is a general purpose electronic device used to perform different types of tasks</td>
-<td>An embedded system is a specialized system that used to perform one or a few specific tasks</td>
+<td>A system is a general purpose electronic device used to perform different types of tasks.</td>
+<td>An embedded system is a specialized system that is used to perform one or a few specific tasks.</td>
 </tr>
 <tr>
-<td>A computer typically consists of a CPU, storage unit, and I/O units</td>
-<td>Embedded system are designed with a microcontroller which consists of a CPU, memory unit, and I/O interface on a single IC chip</td>
+<td>A computer typically consists of a CPU, storage unit, and I/O units.</td>
+<td>Embedded system are designed with a microcontroller which consists of a CPU, memory unit, and I/O interface on a single IC chip.</td>
 </tr>
 <tr>
-<td>high processing power</td>
-<td>relatively low processing power</td>
+<td>High processing power.</td>
+<td>Relatively low processing power.</td>
 </tr>
 <tr>
-<td>Computers</td>
-<td>Music Player</td>
+<td>Example:- Computers</td>
+<td>Example:- Music Player</td>
 </tr>
 </tbody>
 </table>
@@ -298,14 +357,14 @@ pre[data-line] .line-highlight[data-end]:after {
 <table>
 <thead>
 <tr>
-<th>uProc</th>
-<th>uCont</th>
+<th>Microprocessor</th>
+<th>Microcontroller</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>It is a processor in which memory and I/O output component is connected externally</td>
-<td>It is a controlling device in which memory and I/O output component is present internally</td>
+<td>It is a processor in which memory and I/O output component is connected externally.</td>
+<td>It is a controlling device in which memory and I/O output component is present internally.</td>
 </tr>
 <tr>
 <td><img src="https://www.javatpoint.com/embeddedsystem/images/es-processors.png" alt="img"></td>
@@ -316,9 +375,9 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="basic-embedded-system-block-diag">Basic Embedded System Block Diag</h2>
 
 <p><img src="https://imgur.com/OJEkL5N.png" alt="img"></p>
-<h2 class="mume-header" id="arduino-uno-overview">Arduino UNO Overview</h2>
+<h2 class="mume-header" id="arduino-uno-or-nano-overview">Arduino UNO or Nano Overview</h2>
 
-<h3 class="mume-header" id="specs">Specs</h3>
+<h3 class="mume-header" id="specifications">Specifications</h3>
 
 <table>
 <thead>
@@ -333,7 +392,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <td>Arduino UNO/ Arduino Nano</td>
 </tr>
 <tr>
-<td>uCont</td>
+<td>Microcontroller</td>
 <td>ATmega328P(8-Bit)</td>
 </tr>
 <tr>
@@ -342,7 +401,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td>Analog Input</td>
-<td>6-8</td>
+<td>6(UNO)/ 8(Nano)</td>
 </tr>
 <tr>
 <td>PWM Output</td>
@@ -358,10 +417,10 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td>I/O Current</td>
-<td>20mA</td>
+<td>20mA(UNO)/ 40mA(Nano)</td>
 </tr>
 <tr>
-<td>Comm.</td>
+<td>Communication</td>
 <td>UART,I2C,SPI</td>
 </tr>
 <tr>
@@ -395,7 +454,8 @@ pre[data-line] .line-highlight[data-end]:after {
 <h4 class="mume-header" id="setup">setup()</h4>
 
 <ul>
-<li>The <code>setup()</code> function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The <code>setup()</code> function will only run once, after each powerup or reset of the Arduino board.</li>
+<li>The <code>setup()</code> function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc.</li>
+<li>The <code>setup()</code> function will only run once, after each power-up or reset of the Arduino board.</li>
 </ul>
 <h4 class="mume-header" id="loop">loop()</h4>
 
@@ -430,7 +490,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td>continue</td>
-<td>The <code>continue</code> statement <strong>skips</strong> the rest of the current iteration of a loop</td>
+<td>The <code>continue</code> statement <strong>skips</strong> the current iteration of a loop</td>
 <td>-</td>
 </tr>
 <tr>
@@ -638,7 +698,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="compound-operators">Compound Operators</h3>
 
 <ul>
-<li>shorthand notation</li>
+<li>Shorthand notation</li>
 </ul>
 <table>
 <thead>
@@ -692,12 +752,12 @@ pre[data-line] .line-highlight[data-end]:after {
 <tr>
 <td>increment</td>
 <td>++</td>
-<td>x++</td>
+<td>x++ (post), ++x (pre)</td>
 </tr>
 <tr>
 <td>decrement</td>
 <td>--</td>
-<td>x--</td>
+<td>x-- (post), --x (pre)</td>
 </tr>
 </tbody>
 </table>
@@ -766,7 +826,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <tr>
 <td>byte</td>
 <td>8</td>
-<td>0 - 255</td>
+<td>0 to 255</td>
 </tr>
 <tr>
 <td>char</td>
@@ -896,8 +956,8 @@ pre[data-line] .line-highlight[data-end]:after {
 <thead>
 <tr>
 <th>API</th>
-<th>Info</th>
-<th>Arg</th>
+<th>Information</th>
+<th>Arguments</th>
 <th>Return</th>
 </tr>
 </thead>
@@ -927,15 +987,15 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 <pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-	<span class="token function">pinMode</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	<span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token constant">LED_BUILTIN</span><span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 
 <span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
 	<span class="token comment">/* Will blink builtin led every one second*/</span>
-	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">digitalWrite</span><span class="token punctuation">(</span><span class="token constant">LED_BUILTIN</span><span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// delay is in millisecond</span>
-	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">digitalWrite</span><span class="token punctuation">(</span><span class="token constant">LED_BUILTIN</span><span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre><ul>
@@ -945,7 +1005,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>PUSH_BTN<span class="token punctuation">,</span><span class="token constant">INPUT_PULLUP</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Set pin as input because your are reading the state </span>
-	<span class="token function">pinMode</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	<span class="token function">pinMode</span><span class="token punctuation">(</span><span class="token constant">LED_BUILTIN</span><span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span>
 
 <span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -953,13 +1013,13 @@ pre[data-line] .line-highlight[data-end]:after {
 	<span class="token keyword keyword-int">int</span> state <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>PUSH_BTN<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>state <span class="token operator">==</span><span class="token constant">LOW</span><span class="token punctuation">)</span> <span class="token comment">// Button pressed </span>
 	<span class="token punctuation">{</span>
-		<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED on </span>
+		<span class="token function">digitalWrite</span><span class="token punctuation">(</span><span class="token constant">LED_BUILTIN</span><span class="token punctuation">,</span><span class="token constant">HIGH</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED on </span>
 	<span class="token punctuation">}</span>
 	<span class="token keyword keyword-else">else</span><span class="token punctuation">{</span> 
-		<span class="token function">digitalWrite</span><span class="token punctuation">(</span>BUILTIN_LED<span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED off</span>
+		<span class="token function">digitalWrite</span><span class="token punctuation">(</span><span class="token constant">LED_BUILTIN</span><span class="token punctuation">,</span><span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// LED off</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</pre><h2 class="mume-header" id="serial-vs-parallel-communication">SERIAL VS. PARALLEL COMMUNICATION</h2>
+</pre><h2 class="mume-header" id="serial-vs-parallel-communication">Serial vs Parallel Communication</h2>
 
 <ul>
 <li>
@@ -971,7 +1031,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-SPI-Serial-Transmission-of-the-Letter-C-768x235.png" alt="img"></p>
 </li>
 </ul>
-<h2 class="mume-header" id="serial-uart--universal-asynchronous-receiver-transmitter">Serial (UART- Universal asynchronous receiver transmitter)</h2>
+<h2 class="mume-header" id="serial--uart--universal-asynchronous-receiver-transmitter-">Serial ( UART- Universal asynchronous receiver-transmitter )</h2>
 
 <ul>
 <li>
@@ -997,16 +1057,16 @@ pre[data-line] .line-highlight[data-end]:after {
 <img src="https://www.circuitbasics.com/wp-content/uploads/2016/01/Introduction-to-UART-Packet-Frame-and-Bits-2.png" alt="img"></p>
 </li>
 <li>
-<p><code>START BIT</code>: The UART data transmission line is normally held at a high voltage level when it&#x2019;s not transmitting data. To start the transfer of data, the transmitting UART pulls the transmission line from high to low for one clock cycle</p>
+<p><code>START BIT</code>: The UART data transmission line is normally held at a high voltage level when it&#x2019;s not transmitting data. To start the transfer of data, the transmitting UART pulls the transmission line from high to low for one clock cycle.</p>
 </li>
 <li>
-<p><code>STOP BITS</code>: To signal the end of the data packet, the sending UART drives the data transmission line from a low voltage to a high voltage for at least two bit durations</p>
+<p><code>STOP BITS</code>: To signal the end of the data packet, the sending UART drives the data transmission line from a low voltage to a high voltage for at least two bit durations.</p>
 </li>
 <li>
-<p><code>DATA FRAME</code>: The data frame contains the actual data being transferred. It can be 5 bits up to 8 bits long if a parity bit is used. If no parity bit is used, the data frame can be 9 bits long. In most cases, the data is sent with the least significant bit first</p>
+<p><code>DATA FRAME</code>: The data frame contains the actual data being transferred. It can be 5 bits up to 8 bits long if a parity bit is used. If no parity bit is used, the data frame can be 9 bits long. In most cases, the data is sent with the least significant bit first.</p>
 </li>
 <li>
-<p><code>PARITY</code>: Parity describes the evenness or oddness of a number. The parity bit is a way for the receiving UART to tell if any data has changed during transmission. Bits can be changed by electromagnetic radiation, mismatched baud rates, or long distance data transfers. After the receiving UART reads the data frame, it counts the number of bits with a value of 1 and checks if the total is an even or odd number. If the parity bit is a 0 (even parity), the 1 bits in the data frame should total to an even number. If the parity bit is a 1 (odd parity), the 1 bits in the data frame should total to an odd number. When the parity bit matches the data, the UART knows that the transmission was free of errors. But if the parity bit is a 0, and the total is odd; or the parity bit is a 1, and the total is even, the UART knows that bits in the data frame have changed.</p>
+<p><code>PARITY</code>: Parity describes the evenness or oddness of a number. The parity bit is a way for the receiving UART to tell if any data has changed during transmission. Bits can be changed by electromagnetic radiation, mismatched baud rates, or long distance data transfers. After the receiving UART reads the data frame, it counts the number of bits with a value of 1 and checks if the total is an even or odd number. If the parity bit is a 0 (even parity), the 1 bits in the data frame should total to an even number. If the parity bit is a 1 (odd parity), the 1 bits in the data frame should total to an odd number. When the parity bit matches the data, the UART knows that the transmission was free of errors. But if the parity bit is a 0, and the total is odd or the parity bit is a 1, and the total is even, the UART knows that bits in the data frame have changed.</p>
 </li>
 <li>
 <p>API</p>
@@ -1019,8 +1079,8 @@ pre[data-line] .line-highlight[data-end]:after {
 <thead>
 <tr>
 <th>API</th>
-<th>Info</th>
-<th>Arg</th>
+<th>Information</th>
+<th>Arguments</th>
 <th>Return</th>
 </tr>
 </thead>
@@ -1065,7 +1125,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <thead>
 <tr>
 <th>Board</th>
-<th>OPERATING VOLTAGE</th>
+<th>Operating voltage</th>
 <th>Pins</th>
 <th>Resolution(n)</th>
 <th>sample time</th>
@@ -1113,10 +1173,10 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>Arduino AVR Boards (Uno, Mega, Leonardo, etc.)</p>
 <ul>
 <li>
-<p>DEFAULT: the default analog reference of 5 volts (on 5V Arduino boards) or 3.3 volts (on 3.3V Arduino boards)</p>
+<p>DEFAULT: the default analog reference of 5 volts (on 5V Arduino boards) or 3.3 volts (on 3.3V Arduino boards).</p>
 </li>
 <li>
-<p>INTERNAL: a built-in reference, equal to 1.1 volts on the ATmega168 or ATmega328P and 2.56 volts on the ATmega32U4 and ATmega8 (not available on the Arduino Mega)</p>
+<p>INTERNAL: a built-in reference, equal to 1.1 volts on the ATmega168 or ATmega328P and 2.56 volts on the ATmega32U4 and ATmega8 (not available on the Arduino Mega).</p>
 </li>
 <li>
 <p>EXTERNAL: the voltage applied to the AREF pin (0 to 5V only) is used as the reference.</p>
@@ -1144,15 +1204,15 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="pwm--pulse-width-modulation-">PWM ( Pulse Width Modulation )</h2>
 
 <ul>
-<li>Writes an analog value to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to <code>analogWrite()</code>, the pin will generate a steady rectangular wave of the specified duty cycle until the next call to <code>analogWrite()</code> (or a call to <code>digitalRead()</code> or <code>digitalWrite()</code>) on the same pin</li>
-<li>You do not need to call <code>pinMode()</code> to set the pin as an output before calling <code>analogWrite()</code></li>
+<li>Writes an analog value to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to <code>analogWrite()</code>, the pin will generate a steady rectangular wave of the specified duty cycle until the next call to <code>analogWrite()</code> (or a call to <code>digitalRead()</code> or <code>digitalWrite()</code>) on the same pin.</li>
+<li>You do not need to call <code>pinMode()</code> to set the pin as an output before calling <code>analogWrite()</code>.</li>
 </ul>
 <table>
 <thead>
 <tr>
 <th>Board</th>
 <th>PWM Pins</th>
-<th>PWM Freq</th>
+<th>PWM Frequency</th>
 <th>Resolution</th>
 <th>Duty (2^n)</th>
 </tr>
@@ -1163,7 +1223,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <td>3,5,6,9,10,11</td>
 <td>490Hz (5,6: 980 Hz)</td>
 <td>8 bits</td>
-<td>0-100% (0 - 255)</td>
+<td>0-100% (0 to 255)</td>
 </tr>
 </tbody>
 </table>
@@ -1188,7 +1248,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </pre><p><img src="https://imgur.com/xF6i9HZ.png" alt="img"></p>
 </li>
 </ul>
-<h2 class="mume-header" id="i2c-inter-integrated-controller">I2C (inter-integrated controller)</h2>
+<h2 class="mume-header" id="i2c-inter-integrated-controller">I2C (Inter-integrated controller)</h2>
 
 <ul>
 <li>
@@ -1263,10 +1323,10 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td>endTransmission(stop=true)</td>
-<td>This function ends a transmission to a peripheral device that was begun by <code>beginTransmission()</code> and transmits the bytes that were queued by <code>write()</code>. <em>stop</em>: true or false. True will send a stop message, releasing the bus after transmission. False will send a restart, keeping the connection active.</td>
+<td>This function ends a transmission to a peripheral device that was begun by <code>beginTransmission()</code> and transmits the bytes that were queued by <code>write()</code>. <em>stop</em>: true or false. True will send a stop message, releasing the bus after transmission. False will send a restart, keeping the connection active</td>
 <td>&#x2714;&#xFE0F;</td>
 <td>&#x274C;</td>
-<td><pre><br>0: success.<br>1: data too long to fit in transmit buffer.<br>2: received NACK on transmit of address.<br>3: received NACK on transmit of data.<br>4: other error.<br>5: timeout</pre></td>
+<td><pre><br>0: success.<br>1: data too long to fit in transmit buffer.<br>2: received NACK on transmit of address.<br>3: received NACK on transmit of data.<br>4: other error.<br>5: timeout.</pre></td>
 </tr>
 <tr>
 <td>write(val),write(string), write(data, len)</td>
@@ -1446,21 +1506,21 @@ pre[data-line] .line-highlight[data-end]:after {
 <td>Rising</td>
 </tr>
 <tr>
-<td>SPI_MODE0</td>
+<td>SPI_MODE1</td>
 <td>0</td>
 <td>1</td>
 <td>Rising</td>
 <td>Falling</td>
 </tr>
 <tr>
-<td>SPI_MODE0</td>
+<td>SPI_MODE2</td>
 <td>1</td>
 <td>0</td>
 <td>Rising</td>
 <td>Falling</td>
 </tr>
 <tr>
-<td>SPI_MODE0</td>
+<td>SPI_MODE3</td>
 <td>1</td>
 <td>1</td>
 <td>Falling</td>
@@ -1544,7 +1604,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>SPI Master example</p>
 <pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;SPI.h&gt;</span>                             <span class="token comment">//Library for SPI </span></span>
 
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED</span> <span class="token expression"><span class="token number">13</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED</span> <span class="token expression"><span class="token number">9</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">BTN</span> <span class="token expression"><span class="token number">4</span></span></span>
 
 <span class="token keyword keyword-void">void</span> <span class="token keyword keyword-setup">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1559,7 +1619,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token punctuation">}</span>
 
 <span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>SS<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span>		<span class="token comment">// attach SPI device</span>
+	<span class="token function">digitalWrite</span><span class="token punctuation">(</span>SS<span class="token punctuation">,</span> <span class="token constant">LOW</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// Attach SPI device</span>
 
 	<span class="token comment">// Send BTN state of Master </span>
 	<span class="token keyword keyword-byte">byte</span> send <span class="token operator">=</span> <span class="token function">digitalRead</span><span class="token punctuation">(</span>BTN<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1581,7 +1641,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>SPI Slave example</p>
 <pre data-role="codeBlock" data-info="arduino" class="language-arduino"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;SPI.h&gt;</span>                             <span class="token comment">//Library for SPI </span></span>
 
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED</span> <span class="token expression"><span class="token number">13</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LED</span> <span class="token expression"><span class="token number">9</span></span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">BTN</span> <span class="token expression"><span class="token number">4</span></span></span>
 
 volatile <span class="token keyword keyword-byte">byte</span> rxdata <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -1605,7 +1665,7 @@ volatile <span class="token keyword keyword-bool">bool</span> rxdone <span class
   	<span class="token function">pinMode</span><span class="token punctuation">(</span>SCK<span class="token punctuation">,</span> <span class="token constant">INPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token function">pinMode</span><span class="token punctuation">(</span>MISO<span class="token punctuation">,</span><span class="token constant">OUTPUT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// Sets MISO as OUTPUT (Have to Send data to Master IN </span>
 	SPCR <span class="token operator">|=</span> <span class="token function">_BV</span><span class="token punctuation">(</span>SPE<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// Turn on SPI in Slave Mode</span>
-	<span class="token builtin">SPI</span><span class="token punctuation">.</span><span class="token function">attachInterrupt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// Interuupt ON is set for SPI commnucation</span>
+	<span class="token builtin">SPI</span><span class="token punctuation">.</span><span class="token function">attachInterrupt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// Interrupt ON is set for SPI communication</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword keyword-void">void</span> <span class="token keyword keyword-loop">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
